@@ -131,3 +131,9 @@ dist
 
 # Replit debugger
 .breakpoints
+
+echo "data/" >> .gitignore
+echo "*.db" >> .gitignore
+echo ".env" >> .gitignore
+echo "backups/" >> .gitignore
+echo "node_modules/" >> .gitignore
