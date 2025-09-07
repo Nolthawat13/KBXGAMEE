@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KBX Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific styles for admin page to make it more distinct or hide certain elements */
+        .container {
+            max-width: 650px; /* Admin page might be wider */
+            padding: 30px;
+        }
+        .admin-login-section {
+            margin-bottom: 30px;
+            padding: 25px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .admin-login-section h2 {
+            color: #28a745;
+            margin-bottom: 20px;
+        }
+        .admin-login-section input {
+            width: calc(100% - 20px);
+            padding: 12px;
+            margin-bottom: 18px;
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            font-size: 1em;
+        }
+        .admin-login-section button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .admin-login-section button:hover {
+            background-color: #0056b3;
+        }
+        /* Hide content until logged in */
+        .admin-content.hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>KBX Admin Panel</h1>
+
+        <div class="admin-login-section" id="adminLoginSection">
+            <h2>เข้าสู่ระบบผู้ดูแลระบบ</h2>
+            <input type="password" id="adminPasswordInput" placeholder="กรอกรหัสผ่านผู้ดูแลระบบ">
+            <button id="adminLoginButton">เข้าสู่ระบบ</button>
+            <div id="adminLoginMessage" class="message"></div>
+        </div>
+
+        <div class="admin-content hidden" id="adminContent">
+            <div class="manage-hints-section">
+                <h2>จัดการคำใบ้ทั้งหมด</h2>
+                <button id="refreshHintsButton">โหลดคำใบ้ทั้งหมด</button>
+                <div id="manageHintMessage" class="message"></div>
+                <ul id="allHintsList">
+                    </ul>
+                <div id="editHintModal" class="modal hidden">
+                    <div class="modal-content">
+                        <h3>แก้ไขคำใบ้</h3>
+                        <input type="hidden" id="editHintId">
+                        <label for="editFacultySelect">คณะ:</label>
+                        <select id="editFacultySelect">
+                            <option value="">เลือกคณะ</option>
+                            <option value="รวม">รวม</option>
+                            <option value="วิศวกรรมศาสตร์">วิศวกรรมศาสตร์</option>
+                            <option value="วิทยาศาสตร์">วิทยาศาสตร์</option>
+                            <option value="สถาปัตยกรรมศาสตร์">สถาปัตยกรรมศาสตร์</option>
+                            <option value="บริหารธุรกิจ">บริหารธุรกิจ</option>
+                            <option value="เทคโนโลยีสารสนเทศ">เทคโนโลยีสารสนเทศ</option>
+                            <option value="แพทยศาสตร์">แพทยศาสตร์</option>
+                            <option value="ครุศาสตร์อุตสาหกรรม">ครุศาสตร์อุตสาหกรรม</option>
+                            <option value="นวัตกรรมเกษตร">นวัตกรรมเกษตร</option>
+                            <option value="อุตสาหกรรมอาหาร">อุตสาหกรรมอาหาร</option>
+                            <option value="วิทยาลัยนานาชาติ">วิทยาลัยนานาชาติ</option>
+                        </select>
+                        <label for="editHintTextInput">คำใบ้:</label>
+                        <input type="text" id="editHintTextInput" placeholder="แก้ไขคำใบ้">
+                        <div class="modal-buttons">
+                            <button id="saveEditButton">บันทึก</button>
+                            <button id="cancelEditButton" class="cancel-button">ยกเลิก</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="admin_script.js"></script> </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KBX University Guessing Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>KBX</h1>
+        <div id="randomHintDisplay" class="hint-display">
+            กดสุ่มคำใบ้
+        </div>
+        <div id="statusMessage" class="message"></div>
+        <div id="countdownDisplay" class="countdown"></div> <div class="button-group">
+            <button id="randomizeButton">สุ่มคำใบ้</button>
+        </div>
+
+        <div class="add-hint-section">
+            <h2>เพิ่มคำใบ้ใหม่</h2>
+            <select id="facultySelect">
+                <option value="">เลือกคณะ</option>
+                <option value="รวม">รวม</option>
+                <option value="วิศวกรรมศาสตร์">วิศวกรรมศาสตร์</option>
+                <option value="วิทยาศาสตร์">วิทยาศาสตร์</option>
+                <option value="สถาปัตยกรรมศาสตร์">สถาปัตยกรรมศาสตร์</option>
+                <option value="บริหารธุรกิจ">บริหารธุรกิจ</option>
+                <option value="เทคโนโลยีสารสนเทศ">เทคโนโลยีสารสนเทศ</option>
+                <option value="แพทยศาสตร์">แพทยศาสตร์</option>
+                <option value="ครุศาสตร์อุตสาหกรรม">ครุศาสตร์อุตสาหกรรม</option>
+                <option value="นวัตกรรมเกษตร">นวัตกรรมเกษตร</option>
+                <option value="อุตสาหกรรมอาหาร">อุตสาหกรรมอาหาร</option>
+                <option value="วิทยาลัยนานาชาติ">วิทยาลัยนานาชาติ</option>
+                </select>
+            <input type="text" id="addHintInput" placeholder="พิมพ์คำใบ้ใหม่ที่นี่">
+            <button id="addHintButton">เพิ่มคำใบ้</button>
+            <div id="addHintMessage" class="message"></div>
+            <div id="addHintCountdownDisplay" class="countdown"></div> </div>
+
+        <div class="history-section">
+            <button id="toggleRandomizedHistoryButton">แสดงประวัติคำที่สุ่มได้</button>
+            <ul id="randomizedHistoryList" class="hidden">
+                </ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

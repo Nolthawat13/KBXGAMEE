@@ -1,15 +1,27 @@
 {
-  "name": "nodejs",
+  "name": "kbx_university_game_admin",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "KBX Hint Guessing Game for University - With Faculty Selection and Admin Panel",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "game",
+    "kbx",
+    "university",
+    "nodejs",
+    "express",
+    "sqlite",
+    "faculty",
+    "hint",
+    "admin"
+  ],
+  "author": "YourName",
+  "license": "MIT",
   "dependencies": {
-    "@types/node": "^22.13.11"
+    "express": "^4.19.2",
+    "socket.io": "^4.8.1",
+    "sqlite3": "^5.1.7"
   }
 }
